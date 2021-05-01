@@ -4,27 +4,26 @@
     <meta charset="UTF-8">
     <meta name="Description" content="구름냥이 웹사이트"/>
     <meta name="Robots" content="index, follow"/>
-    <meta http-equiv="Content-Type" content="text/html";/>
+    <meta http-equiv="Content-Type" content="text/html"/>
+    <meta name="viewport" content="width=device-width, inital-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>구름냥의 웹사이트</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 </head>
 <body>
     <style>
-
         H1 {
             font-family: 'Gugi', cursive;
             text-align: center;
             padding-top:4vh;
             font-size: 100px;
-            float:center;
             margin: 0;
         }
-        p {
-            font-family: gothic;
+        div p {
             font-family: 'Nanum Myeongjo', serif;
             text-align: center;
-            font-size: 15px;
+            font-size: 20px;
+            padding:40px;
         }
         #titlebar{
             width:100%;
@@ -39,15 +38,18 @@
         }
         #body-container1{
             width:60%;
-            height:35vh;
-            background-color:darkgray;
-            border-radius: 10px;
+            max-width:600px;
+            min-height:25vh;
+        background-color:#E6E6E6;
+        border-radius: 10px;
+
         }
         #body-container2{
             width:50vw;
-            height:35vh;
+            max-width:600px;
+            min-height:25vh;
             background-color:lightgray;
-            float:right;
+            margin:0;
             border-radius: 10px;
         }
         @media(max-width:800px){
@@ -56,8 +58,28 @@
                 text-align: center;
                 padding-top:7vh;
                 font-size: 50px;
-                float:center;
                 margin: 0;
+            }
+            p {
+                font-family: gothic;
+                font-family: 'Nanum Myeongjo', serif;
+                text-align: center;
+                font-size: 18px;
+                padding:25px;
+            }
+            #body-container1{
+                width:60%;
+                max-width:600px;
+                background-color:#E6E6E6;
+                border-radius: 10px;
+
+            }
+            #body-container2{
+                width:50vw;
+                max-width:600px;
+                background-color:lightgray;
+                margin:0;
+                border-radius: 10px;
             }
         }
     </style>
@@ -67,11 +89,12 @@
     <hr>
     <div id="body-countainer">
         <div id="body-container1">
-            <p>야</p>
+            <p>vw와 vh는 화면전체를 기준으로 하는 단위입니다. <br />아이폰이는 갤럭시든 맥북이든 피시방 모니터이든 화면 전체의 가로길이를 100vw로 잡고, 전체 세로길이를 100vh로 잡는 것이죠. 이렇게되면 맥북에서의100vw값은 1440px이지만 핸드폰에서는 360px정도로 바뀌게되죠. </p>
         </div>
         <div id="body-container2">
-            <p>야</p>
+            <p>해당 사이트는 취미제품을 파는 사이트인데요. <br />감성적인 측면을 잘 강조한 디자인이 되어있는데요. 여기가 위의 적저한 예시로 적용됩니다. 푸터는 아래에 박혀있고, 스크롤바가 존재하지 않는 컨텐츠이죠. 이때 헤더의 높이는 150픽셀 푸터는 100픽입니다. 그렇다면 컨텐츠는 100vh에서 250픽셀을 뺀 값이겠죠. 이럴 땐 아래와 같이 적용합니다. 식은 calc함수를 사용합니다.</p>
         </div>
     </div>
+    <footer style="font-size: 3px;text-align: center">Copyright 2020 ⓒ GurumNyang</footer>
 </body>
 </html>
