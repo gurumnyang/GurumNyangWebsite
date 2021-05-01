@@ -3,7 +3,6 @@ const express = require('express'), http = require('http');
 const path = require('path');
 const static = require('serve-static');
 const consoleStamp = require('console-stamp');
-
 const app = express();
 
 app.set('port', 3000);
