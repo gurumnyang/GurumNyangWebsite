@@ -15,9 +15,8 @@ http.createServer(app).listen(app.get('port'), function (){
     console.log(`Express 서버를 시작한거에요! `);
     console.log(`port:[${app.get('port')}]`);
 });
-
 app.get('/', function (req, res) {
-    res.send('Hello World!');
-    console.log(`[/][${req.ip}][request]`)
+    res.redirect('/public/HTML/main.html');
+    console.log(`[/][${req.ip}][request]`);
 });
 app.use('/public',static(path.join(__dirname,'public')));
