@@ -7,6 +7,8 @@ const consoleStamp = require('console-stamp')
 const app = express();
 
 app.set('port', 3000);
+app.set('view engine','ejs');
+app.use('/public',static(path.join(__dirname,'public')));
 
 //타임스탬프
 consoleStamp(console, ['yyyy/mm/dd HH:MM:ss.l']);
@@ -19,4 +21,4 @@ app.get('/', function (req, res) {
     res.redirect('/public/HTML/main.html');
     console.log(`[/][${req.ip}][request]`);
 });
-app.use('/public',static(path.join(__dirname,'public')));
+
