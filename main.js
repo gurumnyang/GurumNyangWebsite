@@ -35,6 +35,11 @@ app.get('/login', function (req, res) {
     console.log(`[/login][${req.ip}][request]`);
 });
 
+app.get('/imfor/:name', function (req, res) {
+    let paramName =
+    res.send('<H1>' + req.params.name + ', Hello !</H1>')
+})
+
 app.use((req, res, next) => {
     console.log(`[/Login][${req.ip}][post]`);
 
@@ -44,5 +49,5 @@ app.use((req, res, next) => {
     res.writeHead('200', {'Content-type':'text/html;charset=utf8'});
     res.write(`<p>당신의 아이디는 ${paramId}</p>`);
     res.write(`<p>당신의 비밀번호는 ${paramPassword}</p>`);
-    res.end;
+    res.end();
 });
