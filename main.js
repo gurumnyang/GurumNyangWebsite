@@ -3,44 +3,51 @@ const express = require('express'), http = require('http');
 const path = require('path');
 const static = require('serve-static');
 const consoleStamp = require('console-stamp');
+const https = require('https');
+const fs = require('fs');
 const app = express();
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
 
-app.set('port', 3000);
+
+const options = {
+    key: fs.readFileSync(path.join(__dirname, 'private.key').toString()),
+    cert: fs.readFileSync(path.join(__dirname,'certificate.crt').toString()),
+    ca: fs.readFileSync(path.join(__dirname, 'ca_bundle.crt'))
+};
+
+
+app.set('port', 443);
 app.use('/public',static(path.join(__dirname,'public')));
+app.use('/', require('./router.js').router)
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(expressSession({
+    secret:'my key',
+    resave:true,
+    saveUninitialized:true
+
+}))
+
 
 //타임스탬프
 consoleStamp(console, ['yyyy/mm/dd HH:MM:ss.l']);
 
 
-http.createServer(app).listen(app.get('port'), function (){
-    console.log(`Express 서버를 시작한거에요! `);
+https.createServer(options, app).listen(process.env.SSL_PORT || 443, function (){
+    console.log(`Express https 서버를 시작한거에요! `);
     console.log(`port:[${app.get('port')}]`);
 });
-app.get('/', function (req, res) {
-    res.redirect('public/HTML/main.html');
-    console.log(`[/][${req.ip}][request]`);
+http.createServer(options, app).listen(process.env.SSL_PORT ||3000, function (){
+    console.log(`Express http 보조 서버를 시작한거에요! `);
+    console.log(`port:[${app.get('port')}]`);
 });
 
-app.get('/imfor', function (req,res) {
-   res.writeHead('200', {'Content-type':'text/html;charset=utf8'});
-   res.end(`<p>'ip': '${req.ip}'</p><p>'ips': '${req.ips}'</p><p>'user': '${req.user}'</p><p>'hostname': '${req.hostname}'</p><p>'url': '${req.url}'</p><p>'params': '${req.params}'</p>`);
-    console.log(`[/imfor][${req.ip}][request]`);
-});
+//보조 http서버
 
-app.get('/login', function (req, res) {
-    res.redirect('public/HTML/login.html');
-    console.log(`[/login][${req.ip}][request]`);
-});
-
-app.get('/imfor/:name', function (req, res) {
-    let paramName =
-    res.send('<H1>' + req.params.name + ', Hello !</H1>')
-})
-
-app.use((req, res, next) => {
+app.use('/public/HTML/login.html',(req, res, next) => {
     console.log(`[/Login][${req.ip}][post]`);
 
     let paramId = req.body.id || req.query.id;
@@ -50,4 +57,20 @@ app.use((req, res, next) => {
     res.write(`<p>당신의 아이디는 ${paramId}</p>`);
     res.write(`<p>당신의 비밀번호는 ${paramPassword}</p>`);
     res.end();
+});
+app.use('/public/HTML/main.html',(req, res,  next) => {
+    console.log(`[/main][${req.ip}][post]`);
+    let paramContent = req.body.loginContent;
+    if(paramContent.replace(/[^a-zA-Z ]/g, "") == ""){
+        res.redirect('https://gurumnyang.kro.kr/imfor/error');
+    } else {
+        res.redirect('https://gurumnyang.kro.kr/imfor/'+paramContent.replace(/[^a-zA-Z ]/g, ""));
+    }
+});
+
+
+
+app.get('/getCookie', function (req, res){
+    res.send(req.cookies);
+    console.log(req.cookies);
 });
