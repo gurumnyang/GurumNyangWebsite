@@ -21,6 +21,9 @@
 </head>
 <body style="width:100%; overflow-x:hidden;">
     <style>
+        body{
+            margin: 0 0 50px 0;
+        }
         H1 {
             font-family: 'Gugi', cursive;
             text-align: center;
@@ -28,7 +31,7 @@
             font-size: 100px;
             margin: 0;
         }
-        div p {
+        div div p {
             font-family: 'Nanum Myeongjo', serif;
             text-align: center;
             font-size: 20px;
@@ -38,12 +41,6 @@
             display: inline-block;
             width:49%;
         }
-        #titlebar{
-            width:100%;
-            height: 20vh;
-            margin: 0 auto;
-
-        }
         #body-bigbrother{
             display: flex;
             width: 90vw;
@@ -51,8 +48,8 @@
             margin: 0;
         }
         #body-container{
-            height:70vh;
             max-width:500px;
+            height: available;
             width:33.3%;
             background: #D8D8D8;
             padding:5px;
@@ -75,6 +72,7 @@
             background-color:#F2F2F2;
             border-radius: 10px;
             border:2px solid gray;
+            float: none;
         }
         #cat-image{
             width:40%;
@@ -101,16 +99,28 @@
             border:2px solid gray;
             margin: 10vh auto 0;
         }
-        .footers p {
+        .footers {
             width:100%;
-            font-size: 3px;
+            font-size: 5px;
+            color: white;
             text-align: center;
         }
-        @media(max-width:1500px){
-            div p {
+        #footer_bar{
+            width:100%;
+            margin: 0 auto;
+            position : fixed;
+            left:0;
+            bottom : 0;
+            height:45px;
+            background-color: dimgrey;
+            text-align: center;
+            padding: 10px;
+        }
+        @media(max-width:1300px){
+            div div p {
                 text-align: center;
-                font-size: 18px;
-                padding: 25px;
+                font-size: 15px;
+                padding: 20px;
             }
             img {
                 width: 100%;
@@ -126,6 +136,9 @@
                 font-size: 75px;
                 margin: 0;
             }
+            div div p {
+                padding: 10px;
+            }
             #body-bigbrother{
                 width: 90vw;
                 flex-direction: column;
@@ -135,6 +148,9 @@
                 height: auto;
                 flex-direction: row;
                 margin: 0 auto;
+            }
+            #body-container div {
+                padding: 10px;
             }
             #sitemap-container {
                 width: 60%;
@@ -166,13 +182,13 @@
                 padding:25px;
             }
             .footers p {
-                font-size: 9px;
+                font-size: 5px;
                 text-align: center;
             }
             div div img {
                 width:100%;
             }
-            #titlebar{
+            #title_bar{
                 width:100%;
                 height: auto;
                 margin: 0 auto 30px;
@@ -180,11 +196,11 @@
             }
             #body-bigbrother{
                 width: 95vw;
+                height: auto;
                 flex-direction: column;
             }
             #body-container{
                 width:100%;
-                height:auto;
                 margin: 0 auto;
                 border-radius:10px;
                 background: #D8D8D8;
@@ -224,7 +240,7 @@
     </style>
 
 
-    <div id="titlebar">
+    <div id="title_bar">
         <h1>구름냥의 웹사이트</h1>
     </div>
     <hr>
@@ -259,14 +275,20 @@
                             <tr><th><input type="text" placeholder="이름 입력" name="loginContent" style="width:80px"></th><th><input type="submit"></th></tr>
                         </table></form></li>
                         <li><a href="https://gurumnyang.kro.kr/imfor">정보반환</a></li>
+                        <li><a href="https://gurumnyang.kro.kr/search">끝말잇기 검색</a></li>
+                        <li><a href="https://gurumnyang.kro.kr/cat">고양이</a></li>
+                        <hr>
+                        <li><a href="https://gurumnyang.kro.kr/setCookie">쿠키 지급</a></li>
+                        <li><a href="https://gurumnyang.kro.kr/getCookie">쿠키 확인</a></li>
                     </ol>
                 </li>
             </ul>
         </div>
         </div>
     </div>
-    <hr>
-    <p class="footers">Copyright 2020 ⓒ GurumNyang</p>
-
+    <div id="footer_bar">
+        <a href="https://gurumnyang.kro.kr/" style="font-size:14px;color:white;width:100%;">메인으로 바로가기</a>
+        <p class="footers">Copyright 2020 ⓒ GurumNyang</p>
+    </div>
 </body>
 </html>

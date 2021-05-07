@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="구름냥이 웹사이트"/>
+    <meta name="Robots" content="index, follow"/>
+    <meta name="title" content="구름냥이 끝말잇기 검색기">
+    <meta name="Content-Type" content="text/html"/>
+    <meta name="keywords" content="끝말잇기 구름냥 구름냥이 CloudCat GurumNyang" />
+    <meta name="viewport" content="width=device-width, inital-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="Page-Enter" content="Random dissove" />
+
+    <!--크롤링 정보-->
+    <meta property="og:title" content="구름냥의 끝말잇기 검색창" />
+    <meta property="og:description" content="구름냥의 웹사이트인거에요!" />
+    <meta property="og:image" content="/public/image/post-thumnail.jpg" />
+
+
+    <title>끝말잇기 검색기</title>
+    <script>
+        window.onload = function (){
+            var search_f = function(event){
+                var contentLink = document.getElementById('searchContent').value;
+                if(contentLink){
+                    location.href = 'https://ko.dict.naver.com/#/search?query='+contentLink+'으로시작하는단어';
+                    return false;
+                } else if(event != enter){
+                    alert('검색창이 비어있습니다!')
+                }
+
+            }
+
+            document.getElementById("submit_b").onclick = function(){
+                search_f();
+            }
+            window.addEventListener("keydown", e => {
+                if(e.key == 'Enter'){
+                    search_f('enter');
+                }
+            });
+
+        }
+    </script>
+    <style>
+        #searchArea{
+            width:100vh;
+            padding-left:calc(50% - 200px);
+            padding-top:calc(50vh - 100px);
+        }
+        #searchBox{
+            border: solid gray;
+            border-width: 2px 4px 4px 2px;
+            padding: 30px;
+            display:inline-block;
+            text-align: center;
+            margin: auto;
+        }
+        td {
+            margin: 0 auto;
+        }
+        .footers {
+            width:100%;
+            font-size: 5px;
+            color: white;
+            text-align: center;
+        }
+        #footer_bar {
+            width:100%;
+            background-color: dimgrey;
+            text-align: center;
+            padding:10px;
+            margin:0 auto;
+            position : fixed;
+            left:0;
+            bottom : 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="searchArea">
+        <table id="searchBox">
+            <tr>
+                <th id="title"><p>검색하세요.</p></th>
+            </tr>
+            <tr><th><input type="input", id="searchContent", placeholder="검색" value="" style="width:60px; height:30px;" autocomplete="off" aria-autocomplete="none"></th><th><p>으로 시작하는 단어</p></th></tr>
+            <tr>
+                <th><input type="button", id="submit_b", value="저장"></th>
+            </tr>
+        </table>
+    </div>
+    <div id="footer_bar">
+        <a href="https://gurumnyang.kro.kr/" style="font-size:14px;color:white;width:100%;">메인으로 바로가기</a>
+        <p class="footers">Copyright 2020 ⓒ GurumNyang</p>
+    </div>
+</body>
+</html>

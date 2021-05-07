@@ -14,12 +14,12 @@
     <meta property="og:title" content="구름냥의 post 테스트 창" />
     <meta property="og:description" content="서버에 정보를 보냅니당!" />
     <meta property="og:image" content="/public/image/post-thumnail.png" />
-</head>
-<body>
     <style>
-        body{
-            text-align: center;
+        body {
+            padding-top:20vh;
+            margin-bottom: 60px;
         }
+
         form {
             display: flex;
             justify-content: center;
@@ -28,11 +28,19 @@
             margin: 0 auto;
         }
         label {
-            padding: 0px 5px 0px 0px;
+            padding: 0 5px 0 0;
         }
         input {
             margin: 0;
             float:left
+        }
+        .wrap {
+            width:600px;
+            height:400px;
+            border: 1px solid gray;
+            margin: 0 auto;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
         }
         .inputClass {
             width:250px;
@@ -40,6 +48,12 @@
             border: 1px solid gray;
             font-size: 14px;
             border-radius: 12px;
+        }
+        .footers {
+            width:100%;
+            font-size: 5px;
+            color: white;
+            text-align: center;
         }
         .submitClass {
             width: 90px;
@@ -50,21 +64,46 @@
             padding:10px;
             margin-left:10px;
         }
+        #titlebar {
+            width:100%;
+            background-color: dimgrey;
+            text-align: center;
+            padding:10px;
+            left : 0;
+            bottom : 0;
+            height:45px;
+            position : fixed;
+        }
 
     </style>
-    <h1>로그인</h1>
-    <form method="post">
-        <table>
-            <tr>
-                <td><label>아이디</label></td>
-                <td><input type="text", class="inputClass" name="id"> </td>
-            </tr>
-            <tr>
-                <td><label>비밀번호</label></td>
-                <td><input type="password", class="inputClass" name="password"></td>
-            </tr>
-        </table>
-        <input type="submit" value="전송" class="submitClass" name="">
-    </form>
+</head>
+<body>
+    <script>
+        function getLoginCookie(){
+            location.href="/login.make";
+        }
+    </script>
+
+    <div class = "wrap">
+        <h1>로그인</h1>
+        <form action="/login-test" method="post">
+            <table>
+                <tr>
+                    <td><label>아이디</label></td>
+                    <td><input type="text", class="inputClass" name="id"> </td>
+                </tr>
+                <tr>
+                    <td><label>비밀번호</label></td>
+                    <td><input type="password", class="inputClass" name="password"></td>
+                </tr>
+            </table>
+            <input type="submit" value="전송" class="submitClass" name="">
+        </form>
+        <input type="button" value="로그인 쿠키 지급" onclick="location.href='/login-make';">
+    </div>
+    <div id="titlebar">
+        <a href="https://gurumnyang.kro.kr/" style="font-size:14px;color:white;width:100%;">메인으로 바로가기</a>
+        <p class="footers">Copyright 2020 ⓒ GurumNyang</p>
+    </div>
 </body>
 </html>

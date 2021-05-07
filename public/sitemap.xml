@@ -1,15 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset>
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://gurumnyang.kro.kr/public/HTML/main.html</loc>
-        <lastmod>2021-05-01T18:29:09+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0000</priority>
+        <loc>https://gurumnyang.kro.kr/</loc>
+        <lastmod>2021-05-03T10:03:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://gurumnyang.kro.kr/public/HTML/login.html</loc>
-        <lastmod>2021-05-01T19:37:12+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6400</priority>
+        <loc>https://gurumnyang.kro.kr/public/HTML/main.html</loc>
+        <lastmod>2021-05-03T10:03:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://gurumnyang.kro.kr/public/HTML/login.html</loc>
+        <lastmod>2021-05-03T10:03:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://gurumnyang.kro.kr/imfor</loc>
+        <lastmod>2021-05-03T10:03:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://gurumnyang.kro.kr/cat</loc>
+        <changefreq>weekly</changefreq>
+        <lastmod>2021-05-07</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://gurumnyang.kro.kr/search</loc>
+        <changefreq>weekly</changefreq>
+        <lastmod>2021-05-07</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://gurumnyang.kro.kr/getcookie</loc>
+        <changefreq>weekly</changefreq>
+        <lastmod>2021-05-04</lastmod>
+        <priority>0.4</priority>
     </url>
 </urlset>
