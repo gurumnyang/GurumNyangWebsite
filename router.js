@@ -1,11 +1,11 @@
-const express = require('express'), http = require('http'), https = require('https');
+const express = require('express')
 const path = require('path');
-const consoleStamp = require('console-stamp');
 const bodyParser = require('body-parser')
 const router = express.Router()
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const fs = require('fs');
+const rateLimit = require("express-rate-limit");
 router.use(cookieParser());
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
@@ -13,6 +13,13 @@ router.use(bodyParser.json());
 const fileLoad = function(file){
     return path.join(__dirname,`public/HTML/${file}`);
 }
+
+// Apply to all requests
+const limiter = new rateLimit({
+    windowMs: 60*1000,
+    max: 30
+})
+router.use(limiter);
 
 router.all('*',function (req,res, next){
     let protocol = req.headers['x-forwarded-proto'] || req.protocol;
@@ -50,7 +57,7 @@ router.get('/cat', function(req, res){
 
 router.get('/imfor/:name', function (req, res) {
     if(req.params.name == "error"){
-        res.send('<h1>이런! 특수문자만 적은 모양이군요!</h1>' +
+        res.send('<h1>이런! 특수문자나 한글은 지원하지 않아요!</h1>' +
             '<a href="https://gurumnyang.kro.kr/">돌아가기</a>');
     }
     res.send('<h1>' + req.params.name + ', Hello !</h1>' +

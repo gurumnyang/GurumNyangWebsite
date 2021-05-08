@@ -38,11 +38,11 @@ app.use(expressSession({
 app.use(favicon(__dirname + '/public/image/favicon.ico'));
 
 // Apply to all requests
-app.use(rateLimit({
-        windowMs: 60*1000,
-        max: 30
-    })
-);
+const limiter = new rateLimit({
+    windowMs: 60*1000,
+    max: 30
+})
+app.use(limiter);
 
 
 //타임스탬프
@@ -74,13 +74,13 @@ app.post('/login-test',function(req, res, next) {
     res.write(`<p>당신의 비밀번호는 ${paramPassword}</p>`);
     res.end();
 });
-app.use('/main.html',function(req, res, next) {
-    console.log(`[/main][${req.ip}][POST]`);
+app.use('/',function(req, res, next) {
     let paramContent = req.body.loginContent;
     if(paramContent.replace(/[^a-zA-Z ]/g, "") == ""){
         res.redirect('https://gurumnyang.kro.kr/imfor/error');
     } else {
         res.redirect('https://gurumnyang.kro.kr/imfor/'+paramContent.replace(/[^a-zA-Z ]/g, ""));
+        console.log(`[/main][${req.ip}][POST]["${req.body.loginContent}"]`);
     }
 });
 
