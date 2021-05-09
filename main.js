@@ -76,11 +76,13 @@ app.post('/login-test',function(req, res, next) {
 });
 app.use('/',function(req, res, next) {
     let paramContent = req.body.loginContent;
-    if(paramContent.replace(/[^a-zA-Z ]/g, "") == ""){
-        res.redirect('https://gurumnyang.kro.kr/imfor/error');
-    } else {
-        res.redirect('https://gurumnyang.kro.kr/imfor/'+paramContent.replace(/[^a-zA-Z ]/g, ""));
-        console.log(`[/main][${req.ip}][POST]["${req.body.loginContent}"]`);
+    if(paramContent){
+        if(paramContent.replace(/[^a-zA-Z ]/g, "") == ""){
+            res.redirect('https://gurumnyang.kro.kr/imfor/error');
+        } else {
+            res.redirect('https://gurumnyang.kro.kr/imfor/'+paramContent.replace(/[^a-zA-Z ]/g, ""));
+            console.log(`[/main][${req.ip}][POST]["${req.body.loginContent}"]`);
+        }
     }
 });
 
