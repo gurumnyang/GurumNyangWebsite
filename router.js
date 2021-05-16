@@ -6,13 +6,18 @@ const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const fs = require('fs');
 const rateLimit = require("express-rate-limit");
+const moment = require('moment')
 router.use(cookieParser());
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
 
+
 const fileLoad = function(file){
     return path.join(__dirname,`public/HTML/${file}`);
 }
+
+
+
 
 // Apply to all requests
 const limiter = new rateLimit({
@@ -25,14 +30,16 @@ router.all('*',function (req,res, next){
     let protocol = req.headers['x-forwarded-proto'] || req.protocol;
     if (protocol == 'https'){
         if(req.url != '/favicon.ico'){
-            console.log(`[${req.url}][${req.ip}][${req.method}]`)
+            console.log(`[${req.url}][${req.ip}][${req.method}]`);
+            fs.appendFile(path.join(__dirname,'/logs/log.txt'), `[${moment().format('YYYY/MM/DD HH:mm:ss')}] [${req.url}][${req.ip}][${req.method}]`+'\n','utf8', function(){})
         }
 
         next();
     } else {
         let from = `${protocol}://${req.hostname}${req.url}`;
         let to = `https://${req.hostname}${req.url}`;
-        console.log(`[${req.url}][${req.ip}][${from} --> ${to}]`)
+        console.log(`[${req.url}][${req.ip}][${from} --> ${to}]`);
+        fs.appendFile(path.join(__dirname,'/logs/log.txt'), `[${moment().format('YYYY/MM/DD HH:mm:ss')}][${req.url}][${req.ip}][${from} --> ${to}]`+'\n','utf8', function(){})
         res.redirect(to);
     }
 });
