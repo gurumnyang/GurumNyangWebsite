@@ -1,0 +1,128 @@
+2021-05-15T08:29:08.291Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:08.298Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:09.698Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:09.706Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:10.336Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:39.582Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:40.327Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:40.333Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:41.068Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:41.077Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:41.939Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:41.946Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:42.551Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:42.557Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:43.186Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express https 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:54:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
+2021-05-15T08:29:43.191Z [winston-test] error: uncaughtException: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+TypeError: Cannot create property 'Symbol(level)' on string 'Express http 보조 서버를 시작한거에요! '
+    at DerivedLogger.log (C:\Users\user\Documents\GitHub\NewWebsite\node_modules\winston\lib\winston\logger.js:208:20)
+    at Server.<anonymous> (C:\Users\user\Documents\GitHub\NewWebsite\main.js:60:12)
+    at Object.onceWrapper (node:events:482:28)
+    at Server.emit (node:events:376:20)
+    at emitListeningNT (node:net:1329:10)
+    at processTicksAndRejections (node:internal/process/task_queues:79:21)
