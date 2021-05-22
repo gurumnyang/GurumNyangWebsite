@@ -3,6 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>고양이</title>
+    <script>
+        window.onload = function () {
+            function getLocation() {
+                if (navigator.geolocation) { // GPS를 지원하면
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        document.write('<form action="/location" id="locate" method="post"><input type="text" id="hidden" name="locations" value="'+ position.coords.latitude + ' ' + position.coords.longitude +'"></form>');
+                        document.getElementById("locate").submit();
+                    }, function(error) {
+                        console.error(error);
+                    }, {
+                        enableHighAccuracy: false,
+                        maximumAge: 0,
+                        timeout: Infinity
+                    });
+                }
+
+            }
+            getLocation();
+        }
+    </script>
     <style>
         body {
             margin-bottom: 50px;

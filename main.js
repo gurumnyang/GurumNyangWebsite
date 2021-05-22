@@ -16,11 +16,6 @@ const favicon = require('serve-favicon');
 const fs = require('fs');
 const logger = require('./logger');
 
-//mongodb 모듈
-const MongoClient = require('mongodb').MongoClient;
-
-//데이터베이스 객체 변수 선언 + 데이터베이스 연결은 106행을 참고하시오
-var database;
 
 //SLL 인증서
 const options = {
@@ -32,6 +27,7 @@ const options = {
 
 app.set('port', 443);
 app.use('/public',static(path.join(__dirname,'public')));
+app.use('/upload/image', static(path.join(__dirname,'upload','image')));
 app.use('/robot.txt',static(path.join(__dirname,'robot.txt')));
 
 app.use('/', require('./router.js').router)
@@ -69,7 +65,6 @@ https.createServer(options, app).listen(process.env.SSL_PORT || 443, function ()
     console.log(`Express https 서버를 시작한거에요! `);
     console.log(`port:[${app.get('port')}]`);
     console.log('---------------------------------\n')
-    connectDB()
 });
 
 //보조 http서버
@@ -79,21 +74,23 @@ http.createServer(options, app).listen(process.env.SSL_PORT ||3000, function (){
     console.log(`port:[${app.get('port')}]`);
     console.log('---------------------------------\n')
 });
-//http 리다이렉트
-
 
 
 app.post('/login-test',function(req, res) {
-
-
     let paramId = req.body.id || req.query.id;
     let paramPassword = req.body.password || req.query.password;
     console.log(`[/Login][${req.ip}][POST][id:${paramId}][password:${paramPassword}]`);
+
     res.writeHead('200', {'Content-type':'text/html;charset=utf8'});
     res.write(`<p>당신의 아이디는 ${paramId}</p>`);
     res.write(`<p>당신의 비밀번호는 ${paramPassword}</p>`);
     res.end();
 });
+
+app.post('/location', function (req, res){
+    let paramLocate = req.body.locations || req.query.locations;
+    console.log('[/location][POST][%s][%s]', req.ip, paramLocate )
+})
 app.use('/',function(req, res) {
     let paramContent = req.body.loginContent;
     if(paramContent){
@@ -105,21 +102,4 @@ app.use('/',function(req, res) {
         }
     }
 });
-
-
-//mongodb 연결
-function connectDB() {
-    //연결 정보
-    var databaseUrl = 'mongodb://localhost:27017/local';
-    MongoClient.connect(databaseUrl, function(err, db){
-        if(err) throw err;
-        console.log('---------------------------------\n')
-        console.log('데이터베이스와 연결된거에요! 몽고디비 주소: ' + databaseUrl + '\n');
-        console.log('---------------------------------')
-        database = db;
-    });
-}
-
-
-
 
