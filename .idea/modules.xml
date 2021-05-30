@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/NewWebsite.iml" filepath="$PROJECT_DIR$/.idea/NewWebsite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GurumWebsite.iml" filepath="$PROJECT_DIR$/.idea/GurumWebsite.iml" />
     </modules>
   </component>
 </project>

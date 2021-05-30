@@ -1,12 +1,14 @@
 {
   "arrayUrl": [
     "",
+    "main",
     "login",
     "search",
     "cat"
   ],
   "arrayHTML": [
     "waiting.html",
+    "main.html",
     "waiting.html",
     "waiting.html",
     "waiting.html"
