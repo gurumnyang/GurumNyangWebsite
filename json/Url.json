@@ -1,0 +1,14 @@
+{
+  "arrayUrl": [
+    "",
+    "login",
+    "search",
+    "cat"
+  ],
+  "arrayHTML": [
+    "waiting.html",
+    "waiting.html",
+    "waiting.html",
+    "waiting.html"
+  ]
+}

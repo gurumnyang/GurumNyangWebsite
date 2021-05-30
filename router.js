@@ -17,7 +17,6 @@ router.use(bodyParser.json());
 router.use(cors());
 
 const fileLoad = function(file){
-    console.log(path.join(__dirname,`public/HTML/${file}`));
     return path.join(__dirname,`public/HTML/${file}`);
 }
 
@@ -73,29 +72,19 @@ router.all('*',function (req,res, next){
 
 
 //자동 웹문서 로드 --------------------------
-const arrayUrl = [
-    '',
-    'login',
-    'search',
-    'cat'
-];
-const arrayHTML = [
-    'main.html',
-    'login.html',
-    'search.html',
-    'cat.html'
-]
+
+
+var setting = JSON.parse(fs.readFileSync(path.join(__dirname, '/json/Url.json'), 'utf8').toString());
 
 router.get('*', function(req,res,next){
-    if(arrayUrl.includes(req.url.replace('/', ''))) {
-        console.log('array통해서 로드됨')
-        if(arrayHTML[arrayUrl.indexOf(req.url)]=="undefined"){
+    if(setting.arrayUrl.includes(req.url.replace('/', ''))) {
+        if(setting.arrayHTML[setting.arrayUrl.indexOf(req.url)]=="undefined"){
             res.sendStatus(404);
             res.send('<h1>404 not found</h1>');
         } else {
-            res.sendFile(fileLoad(arrayHTML[arrayUrl.indexOf(req.url.replace('/', ''))]));
+            res.sendFile(fileLoad(setting.arrayHTML[setting.arrayUrl.indexOf(req.url.replace('/', ''))]));
+            console.log('[정보][%s]\n-----[%s]\n-----[%s]', req.ip, req.header('User-Agent'), req.header('UUID'));
         }
-
 
     } else {
         next();
@@ -109,6 +98,15 @@ router.get('/imfor', function (req,res) {
     res.end(`<p>'ip': '${req.ip}'</p><p>'ips': '${req.ips}'</p><p>'user': '${req.user}'</p><p>'hostname': '${req.hostname}'</p><p>'url': '${req.url}'</p><p>'params': '${req.params}'</p><p>'protocol': '${req.headers['x-forwarded-proto'] || req.protocol}'</p>`);
 });
 
+router.get('/gwan', function (req, res){
+    console.log('[정보][관][%s]\n-----[%s]\n-----[%s]', req.ip, req.header('User-Agent'), req.header('UUID'));
+    res.sendFile(fileLoad('main.html'));
+})
+
+router.get('/TheLosT', function (req, res){
+    console.log('[정보][TheLosT][%s]\n-----[%s]\n-----[%s]', req.ip, req.header('User-Agent'), req.header('UUID'));
+    res.sendFile(fileLoad('main.html'));
+})
 
 router.get('/imfor/:name', function (req, res) {
     if(req.params.name === "error"){
