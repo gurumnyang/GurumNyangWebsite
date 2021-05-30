@@ -10,6 +10,8 @@ const moment = require('moment');
 const multer = require('multer');
 const cors = require('cors');
 
+//세팅값 로드
+var setting = JSON.parse(fs.readFileSync(path.join(__dirname, '/json/Url.json'), 'utf8').toString());
 
 router.use(cookieParser());
 router.use(bodyParser.urlencoded({extended: false}));
@@ -19,7 +21,6 @@ router.use(cors());
 const fileLoad = function(file){
     return path.join(__dirname,`public/HTML/${file}`);
 }
-
 
 //이미지 업로드 설정
 var storage = multer.diskStorage({
@@ -73,8 +74,6 @@ router.all('*',function (req,res, next){
 
 //자동 웹문서 로드 --------------------------
 
-
-var setting = JSON.parse(fs.readFileSync(path.join(__dirname, '/json/Url.json'), 'utf8').toString());
 
 router.get('*', function(req,res,next){
     if(setting.arrayUrl.includes(req.url.replace('/', ''))) {

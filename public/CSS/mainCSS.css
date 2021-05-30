@@ -1,0 +1,6 @@
+body {top:0; left:0;margin:0;}
+header {height:80px;text-align: center; background-color: #BDBDBD}
+header h1 {position:absolute; left:50px; top:0px;}
+header ul, h1, li {margin:0;border:3px solid gray;}
+header .lnb li {display: inline-block;top:0;margin:0 10px;}
+header .lnb li a {display: bloc2k; height:30px; font-size:18px; color:#333; line-height: 80px;}
