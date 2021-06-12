@@ -200,7 +200,7 @@
       if (slider.settings.ariaLive && !slider.settings.ticker) {
         slider.viewport.attr('aria-live', 'polite');
       }
-      // add a loading div to display while images are loading
+      // add a loading div to display while bxslider-image are loading
       slider.loader = $('<div class="bx-loading" />');
       slider.viewport.prepend(slider.loader);
       // set el to a massive width, to hold any needed slides
