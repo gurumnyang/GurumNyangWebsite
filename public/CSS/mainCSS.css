@@ -1,6 +1,90 @@
-body {top:0; left:0;margin:0;}
-header {height:80px;text-align: center; background-color: #BDBDBD}
-header h1 {position:absolute; left:50px; top:0px;}
-header ul, h1, li {margin:0;border:3px solid gray;}
-header .lnb li {display: inline-block;top:0;margin:0 10px;}
-header .lnb li a {display: bloc2k; height:30px; font-size:18px; color:#333; line-height: 80px;}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
+
+body {top:0; left:0;}
+section {display:table;text-align:center;width:100vw;height:100vh;margin:0;}
+body .headerP {text-align: right;
+    padding-right: 5%;
+    margin:0 auto;}
+body p a {font-family: 'Noto Sans KR', sans-serif;font-weight:500; font-size:12px; color:#333;}
+
+header {display:flex;flex-direction: row;height:100px;text-align: center;}
+header div h1 {position:absolute;height:100px; margin: 0 auto 0 5%;}
+header div h1 img {height:100px;}
+header div .naver {position:absolute;opacity:0;}
+header nav {height:100px;}
+header .lnb ul {padding-top:36px;}
+header .lnb li {display: inline-block; justify-content: center; top:0;padding:5px 20px;}
+header .lnb li a {display: block; height:30px; font-family: 'Noto Sans KR', sans-serif;font-weight:400;font-size:20px; color:#333;text-decoration: none;}
+
+
+.wrapper {width:100vw;}
+section .center {width:100%;display: flex;justify-content: center;}
+section .title {font-family: 'Noto Sans KR', sans-serif;font-weight:500;font-size: 3.5rem;padding:8rem;}
+
+#aboutSection, #helpSection {background-color:#F0F0F0;text-align: center;}
+.prf {display:flex;justify-content:space-around;align-items:center;flex-flow: row nowrap;border:2px solid #666666;border-radius:10px;box-shadow:12px 12px 2px 1px #FFA233;width:36%;margin:0 0 0 32%;text-align: center;background-color: white} /*margin 4번째 값 = 100 - width / 2 */
+.prf img {width:200px;border:2px solid gray;border-radius:5px;margin:1rem;}
+.prf-content {display:inline-block;width:40%;text-align:left;margin: 20px 20px;}
+
+.prf-content h1 {display:inline-block;padding-left:0;font-family: 'Noto Sans KR', sans-serif;font-size:2rem;padding-right: 10px;}
+.prf-content h3 {display:inline-block;padding-left:0;font-family: 'Noto Sans KR', sans-serif;font-size:0.8rem;}
+.prf-content div ul{display:inline-block;list-style-type:none;padding:0;}
+.prf-content div ul li p {display:inline-block;font-family: 'Noto Sans KR', sans-serif;font-size:1rem;font-weight: 400;line-height:110%;margin:5px;word-break: keep-all;}
+.prf-content div ul li b {display:inline-block;font-family: 'Noto Sans KR', sans-serif;font-size:1rem;font-weight: 600;line-height:110%;word-break: keep-all;}
+.prf-content div ul li a {font-family: 'Noto Sans KR', sans-serif; font-weight:600;font-size:1rem;color:orange;}
+
+.card-list {display:flex;justify-content:center;column-gap:10px;margin:0 3vw 0 3vw;text-align:center;width:50%;}
+.card {min-height:300px;height:auto;border:1px solid gray; box-shadow:0 3px 5px gray; vertical-align:center;padding:15px; background-color:white;margin:10px;}
+.card img {width:100%;border-bottom: 1px solid gray;margin-bottom: 10px;}
+.card h1 {font-family: 'Noto Sans KR', sans-serif;font-size:1.5rem;font-weight:600;margin-bottom: 10px;}
+.card p {font-family: 'Noto Sans KR', sans-serif;font-weight:300;font-size:1.1rem;line-height: 130%;vertical-align: middle;word-break: keep-all;padding-top:10px;}
+
+#helpSection {height: auto;}
+#helpSection .help-list {width:100vw;}
+#helpSection div {display: flex; width:33.33%;height:500px;}
+#helpSection div ul {width: 300px;height:auto;margin:auto;line-height: 150%;}
+
+#helpSection .first {background-color: #666666;}
+#helpSection .second {background-color: #555555;}
+#helpSection .third {background-color: #444444;}
+
+footer {width:100%;height:150px;background-color: #091921;vertical-align: center;}
+footer p {font-weight:300; font-size:12px;}
+#helpSection p, #helpSection a {font-family: 'Noto Sans KR', sans-serif;color:white;font-size:0.8rem;}
+
+
+@media(max-width:1350px) {
+    section .title {padding: 2rem;}
+    .prf {width:60%;margin:10% 0 0 20%}  /*margin 4번째 값 = 100 - width / 2 */
+    .card-list {width:100vw;flex-wrap:wrap;}
+    .card {width:15%; height:90%;}
+    .prf img {width:25%;}
+    .wrapper {padding-top:5%;}
+}
+
+@media(max-width:750px) {
+    header .lnb li {padding:5px 5px;}
+    header .lnb li a {font-size:17px;}
+    .headerP {position:absolute;opacity:0;}
+    header {flex-direction: column;}
+    header div {display: flex; flex-direction: row;}
+    header div h1 {display:flex;position:static;width:50vw;height: 30px;justify-content: start;margin:0;}
+    header div h1 img {height:70px;}
+    header div h2 {display:flex; position:static;width:50vw; height:30px;justify-content: flex-end;padding-right:10px;margin:0;}
+    header div h2 .naver {display: initial; position:static;height:50px;margin-top:10px;}
+    header div .naver {position:static;opacity:100%;}
+    .wrapper {padding-top:15%;}
+
+    .prf-content {width:50%;}
+    .prf img {width:30%; margin:0;}
+    .prf-content div ul li p, .prf-content div ul li a, .prf-content div ul li b {font-size:0.9rem;}
+
+    #urlSection {height:125vh;}
+    .card-list {width:100%;height:50%;}
+    .card {width:40%;min-height:320px;margin:5px 0;}
+    section .center {padding-top:0;}
+    #helpSection .help-list {display: flex;justify-content:center;width:100%;height: auto;}
+    .prf {width:90%;margin:10% 0 0 5%} /*margin 4번째 값 = 100 - width / 2 */
+
+
+}
